@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/app.css">
+    <title>Task Manager</title>
+</head>
+<body>
+
+    <header>
+        <nav> 
+            <p>My <span>Task</span> Manager  </p>
+            <div class="hamburguer-menu">
+                <i class="fas fa-bars" id="menu-bars"></i>
+                <ul id="menuUl-big">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SOCIAL</a></li>
+                </ul>                
+                <ul id="menuUl">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SOCIAL</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="container">
+                <!-- Here goes some tasks -->
+        </section>
+
+        <div class="show-control">
+            <i class="fas fa-angle-double-left" id="formControl"></i>
+            <p id="show-control-text">SHOW</p>
+
+        </div>
+
+        <section class="side-form" id="side-form">
+            <h2>TASK</h2>
+
+            <div class="form-controller">
+                <label for="">Title</label>
+                <input type="text" placeholder="enter title" id="txtTitle">
+            </div>
+            <div class="form-controller flex-row">
+                <i class="far fa-star" id="importantInactive"></i>
+                <label for="">Important</label>
+               
+            </div>
+            <div class="form-controller">
+                <label for="">Due Date</label>
+                <input type="datetime-local" id="txtDuedate">
+            </div>
+            <div class="form-controller">
+                <label for="">Contact</label>
+                <input type="text" placeholder="enter contact" id="txtContact">
+            </div>
+            <div class="form-controller">
+                <label for="">Location</label>
+                <input type="text" placeholder="enter location" id="txtLocation">
+            </div>
+
+            <div class="form-controller">
+                <label for="">Description</label>
+                <textarea name="" id="txtDescription" ></textarea>
+            </div>
+
+            <div class="form-controller flex-row">
+                <label for="">Color</label>
+                <input type="color" id="clrPicker" >
+            </div>
+
+            <button class="btn btn-dark">Add Task</button>
+        </section>
+        
+        <div class="add-task-float">
+            <i class="fas fa-plus-square" id="addTaskIcon"></i>
+        </div>
+    </main>
+   
+
+
+
+
+
+    <footer>
+        <p>Designed by Arturo Martinez  2022</p>  
+    </footer>
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./scripts/app.js"></script>
+    </body>
+</html>
+
+
+
+<!-- 
+
+Task:
+title
+important
+dueDate
+contact
+location
+description
+color
+
+ -->
