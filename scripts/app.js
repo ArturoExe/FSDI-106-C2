@@ -31,16 +31,17 @@ const toggleImportant = () => {
 
 const toggleForm = () => {
     console.log("click");
+
     if(isVisible){
         // Hide Form
-        $("#side-form").css("display","none");
+        document.querySelector('#side-form').classList.toggle('form--active')
         $("#formControl").addClass(notVisible);
         $("#formControl").removeClass(visible);
         $("#show-control-text").text("SHOW");
         isVisible=false;
     }else{
         // Shows Form
-        $("#side-form").css("display","flex");
+        document.querySelector('#side-form').classList.toggle('form--active')
         $("#formControl").removeClass(notVisible);
         $("#formControl").addClass(visible);
         $("#show-control-text").text("HIDE");
@@ -81,25 +82,90 @@ const toggleMenu = () => {
 
 }
 
+
+const saveTask = () => {
+
+    let title=$("#txtTitle").val();
+    let dueDate=$("#txtDuedate").val();
+    let contact=$("#txtContact").val();
+    let location=$("#txtLocation").val();
+    let desc=$("#txtDescription").val();
+    let color=$("#clrPicker").val();
+
+    let newTask=new Task(isImportant,title,dueDate,contact,location,desc,color);
+
+    // Clear Form
+    $("#txtTitle").val("");
+    $("#txtDueDate").val("");
+    $("#txtContact").val("");
+    $("#txtLocation").val("");
+    $("#txtDescription").val("");
+    $("#clrPicker").val("000");
+
+
+    displayTask(newTask);
+    console.log(newTask);
+
+}
+
+
+const displayTask = (task) => {
+//Create the sintax
+
+let  card=`
+<div class="task-item">
+    <div class="task--data-one">
+    <h2>${task.title}</h2>
+    <p>${task.dueDate}</p>
+    </div>
+   
+
+    <div class="task--data-two">
+    <h3>Contact</h4>
+    <p>${task.contact}</p>
+    <p>${task.location}</p>
+    </div>
+
+    <div class="task--data-three">
+    <h3>Additional Information</h3>
+    <p>${task.desc}</p>
+    <p>${task.color}</p>
+    </div>
+
+    <div class='task--data-four'>
+    <button class=btnDelete onClick="deleteTask();">Delete</button>
+    </div>
+    
+    
+    
+
+<div>
+`;
+
+// Append the sintax to an element on the screen
+$("#taskList").append(card);
+
+
+}
+
+const deleteTask = () => {
+
+    console.log("Task deleted");
+
+}
+
 const init = () => {
 
     console.log("script running..");
 
-    $(window).resize(function(){
-
-        if ($(window).width() <= 800) {  
-
-           $("#body").css("background-color","red");
-
-     }     
-    });
+   
 
     // EVENTS
     $("#importantInactive").click(toggleImportant);
     $("#formControl").click(toggleForm);
     $("#addTaskIcon").click(toggleForm);
     $("#menu-bars").click(toggleMenu);
-
+    $("#btnSave").click(saveTask);
  }
 
 window.onload=init;

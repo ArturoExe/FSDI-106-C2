@@ -1,13 +1,19 @@
 /* Global reset */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@1&display=swap');
 body{
+    box-sizing: border-box;
+
     background-color: black;
     color: azure;
-    font-family: sans-serif;
+    font-family: 'Ubuntu Mono', sans-serif;
+    font-weight: 300;    
     margin: 0;
   
-   
-    
+ 
 }
+
+
 
 /* Nav section */
 .hamburguer-menu i{
@@ -24,7 +30,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    margin-bottom: 1rem;
 }
 
 
@@ -103,28 +109,42 @@ h1{
     }
     
 
+
 /* Main Section */
 main{
-
     display: flex;
-    flex: 2;
+    flex:2 ;    
     margin: 0;
 }
 
 
 /* Form Section */
 .side-form{
-    width: 40%;
+   
+    width: 1rem;
+    height: max-content;
     color: black;
     display: flex;
     text-align: center;
     flex-direction: column;
-    background-color: rgb(248, 149, 68);
+    background-image:url("https://images.unsplash.com/photo-1454117096348-e4abbeba002c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    background-color: transparent;
     margin-bottom: 2rem;
-    display: none;
-    
-   
+    opacity: 0;
+    transform: scaleX(0);
+    transition: transform 175ms ease-out 50ms, opacity 200ms ease-in;
 } 
+
+.form--active{
+    display: flex;
+    padding-left: 0;
+    opacity: 1;
+    width: fit-content;
+    transform: scaleX(1);
+    transform-origin: right;
+}   
+
+
 .side-form h2{
     letter-spacing: 4px;
     margin-top: 1rem;
@@ -135,21 +155,37 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
-    
 
+
+}
+
+.row-disp{
+    flex-direction: row;
+    place-content: center;
 }
 
 .form-controller input{
-    width: 100%;
+    width: 80%;
     background-color: transparent;
     border: none;
-    border-bottom: 2px solid rgb(255, 102, 0);
+    border-bottom: 2px solid rgb(255, 145, 0);
     outline: none;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-weight: 500;
 
 }
+
+.form-controller input[type=datetime-local]{
+    
+  width:80%;
+
+}
+
+.form-controller textarea{
+    
+    width:90%;;
+  
+  }
 
 
 .form-controller label{
@@ -170,21 +206,22 @@ main{
 }
 
 .show-control{
-    margin: 1rem;
+    margin: 0 0rem;
     height: 4rem;
-    display: inline-block;
-    padding: 1rem;
+    padding: 1.3rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 
 .show-control p{
    cursor: pointer;
 }
+
 #formControl{
-    
     font-size: 2.7rem;
     cursor: pointer;
 }
+
 .show-control:hover{
     transform: scale(1.2);
     color:rgb(248, 149, 68);
@@ -193,12 +230,66 @@ main{
 
 button{
     margin: 1rem !important;
-    width: 5rem;
+    width: 6rem;
 
 }
 .add-task-float{
+    
     display: none;
 }
+
+.list-container{
+    
+    width:100%; 
+    display: flex;
+    flex-direction: column;
+  
+    
+}
+
+.task-item{
+    
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+    color: black;
+    background-color: rgb(255, 255, 255);
+
+}
+.task-item p{
+    margin: 0%;
+}
+
+.task--data-one,.task--data-two,.task--data-three{
+    margin: 1rem;
+}
+
+
+.task--data-four{
+    flex: 1;
+    display: flex;
+    justify-content: end;
+}
+
+
+.btnDelete{
+    border: none;
+    border-radius: 10rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 1rem;
+    height: 2rem;
+    letter-spacing: 2px;
+    background:linear-gradient(70deg,#FF8900,#bb00ff);
+
+}
+
+.btnDelete:hover{
+    transform: scale(1.1);
+    background:linear-gradient(40deg,#ff0000,#ff7b00);
+
+}
+
 
 @media(max-width:800px){
 
@@ -206,9 +297,9 @@ button{
         display: block;
         position: absolute;
         right: 5%;
-        bottom: 10%;
+        bottom: 5%;
         font-size: 2rem;
-        color: rgb(225, 248, 20);
+        color: rgb(255, 255, 255);
     }
 }
 
@@ -216,9 +307,11 @@ button{
 
 /* Footer Section */
 footer{
-    position: absolute;
+  
+    position: fixed;
     bottom:0;
-    padding-left: 1rem;
+    left: 0;
+    
     
 }
 

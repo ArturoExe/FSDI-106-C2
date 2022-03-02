@@ -14,7 +14,7 @@
 
     <header>
         <nav> 
-            <p>My <span>Task</span> Manager  </p>
+            <p>MY <span>TASK</span> MANAGER  </p>
             <div class="hamburguer-menu">
                 <i class="fas fa-bars" id="menu-bars"></i>
                 <ul id="menuUl-big">
@@ -34,7 +34,7 @@
 
     <main>
 
-        <section class="container">
+        <section class="list-container" id="taskList">
                 <!-- Here goes some tasks -->
         </section>
 
@@ -51,7 +51,7 @@
                 <label for="">Title</label>
                 <input type="text" placeholder="enter title" id="txtTitle">
             </div>
-            <div class="form-controller flex-row">
+            <div class="form-controller row-disp">
                 <i class="far fa-star" id="importantInactive"></i>
                 <label for="">Important</label>
                
@@ -79,12 +79,19 @@
                 <input type="color" id="clrPicker" >
             </div>
 
-            <button class="btn btn-dark">Add Task</button>
+            <button class="btn btn-dark" id="btnSave">Add Task</button>
         </section>
         
         <div class="add-task-float">
             <i class="fas fa-plus-square" id="addTaskIcon"></i>
         </div>
+
+
+
+
+
+
+        
     </main>
    
 
@@ -98,6 +105,7 @@
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./scripts/task.js"></script>
         <script src="./scripts/app.js"></script>
     </body>
 </html>
