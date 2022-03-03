@@ -20,14 +20,27 @@ function objects(){
     console.log(d2);
 }
 
-class Dog{
-    ///   
-    constructor(){
 
-    }
+const testRequest = () => { 
+    //https://restclass.azurewebsites.net/api/test
+
+        $.ajax({
+            type:"GET",
+            url:"https://restclass.azurewebsites.net/api/test",
+            success:function(e){
+                console.log("Request succeded",e);
+            },
+            error:function(e){
+
+                console.log("Request failed",e)
+            }
+
+        });
+
+
 }
-
 
 
 //Exec the fn..
 objects();
+// testRequest();
